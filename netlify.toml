@@ -1,0 +1,4 @@
+[build]
+base = "background_check/"
+publish = "background_check/build/"
+command = "yarn build"

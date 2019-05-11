@@ -1,28 +1,27 @@
 import React from 'react';
 import './App.css';
-import axios from 'axios';
-import UsersList from './components/UsersList';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import UserForm from './components/users/userForm';
+
+const Homepage = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+`;
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      userData: []
-    };
-  }
-  componentDidMount() {
-    axios.get(`https://background-check.herokuapp.com/users`)
-      .then(res => {
-        const users = res.data;
-        this.setState({ userData: users });
-      });
-  };
   render() {
     return (
-      <div className="App">
-        <h1 className="Header">List of Users</h1>
-        <UsersList userData={this.state.userData} />
-      </div>
+      <Router>
+        <div className="App">
+          <Homepage>
+            <Link to ='/users'>Users</Link>
+          </Homepage>
+            <Route exact path='/users' component={UserForm} />
+        </div>
+      </Router>
     );
   }
 }

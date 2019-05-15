@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 import UserForm from './components/users/userForm';
+import SendToGoogle from './components/OAuth/SendToGoogle.js';
+import ReceiveFromGoogle from './components/OAuth/ReceiveFromGoogle.js';
 
 const Homepage = styled.div`
   display: flex;
@@ -20,10 +21,13 @@ class App extends React.Component {
             <Link to ='/users'>Users</Link>
           </Homepage>
             <Route exact path='/users' component={UserForm} />
+        
+            
         </div>
       </Router>
     );
   }
 }
+
 
 export default App;

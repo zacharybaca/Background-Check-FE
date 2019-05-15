@@ -3,8 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import UserForm from './components/users/userForm';
-import SendToGoogle from './components/OAuth/SendToGoogle.js';
-import ReceiveFromGoogle from './components/OAuth/ReceiveFromGoogle.js';
+
 
 const Homepage = styled.div`
   display: flex;

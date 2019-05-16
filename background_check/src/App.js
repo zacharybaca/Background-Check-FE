@@ -7,8 +7,7 @@ import UserForm from './components/users/userForm';
 import Candidates from './components/candidates/candidateForm';
 import Login from './Login';
 import Register from './Register';
-import GoogleLogin from 'react-google-login';
-import PostData from './services/PostData.js';
+
 
 const Homepage = styled.div`
   display: flex;
@@ -28,7 +27,9 @@ class App extends React.Component {
             <Link to ='/register'>Register</Link>
             <Link to ='/users'>Users</Link>
             <Link to ='/candidates'>Candidates</Link>
+            
           </Homepage>
+            
             <Route exact path= '/login' component={Login} />
             <Route path= '/register' component={Register} />
             <PrivateRoute exact path='/users' component={UserForm} />

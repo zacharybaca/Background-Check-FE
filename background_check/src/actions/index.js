@@ -75,10 +75,10 @@ export const getCandidate = () => dispatch => {
         }); 
 };
 
-export const postCandidate = (candidates) => dispatch => {
+export const postCandidate = (candidate) => dispatch => {
     dispatch({ type: FETCH_CAND_START });
     axios
-        .get(`${URL}/candidates`, candidates)
+        .post(`${URL}/candidate`, candidate)
         .then(res => {
             console.log(res);
             dispatch({ type: FETCH_CAND_SUCCESS, payload: res.data })   

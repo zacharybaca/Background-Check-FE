@@ -33,12 +33,8 @@ class App extends React.Component {
             <Route exact path= '/login' component={Login} />
             <Route path= '/register' component={Register} />
             <Route exact path='/users' component={UserForm} />
-<<<<<<< HEAD
             <Route exact path='/candidates' component={Candidates} />
           
-=======
-            
->>>>>>> 0dda5ecf3103276fc6a441d851439a06959f6af6
             
         </div>
       </Router>

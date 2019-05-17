@@ -16,7 +16,9 @@ const Homepage = styled.div`
 `;
 
 class App extends React.Component {
+  
   render() {
+
     return (
       <Router>
         <div className="App">
@@ -25,12 +27,18 @@ class App extends React.Component {
             <Link to ='/register'>Register</Link>
             <Link to ='/users'>Users</Link>
             <Link to ='/candidates'>Candidates</Link>
+            
           </Homepage>
+            
             <Route exact path= '/login' component={Login} />
             <Route path= '/register' component={Register} />
             <Route exact path='/users' component={UserForm} />
+<<<<<<< HEAD
             <Route exact path='/candidates' component={Candidates} />
           
+=======
+            
+>>>>>>> 0dda5ecf3103276fc6a441d851439a06959f6af6
             
         </div>
       </Router>

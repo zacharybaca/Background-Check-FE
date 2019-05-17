@@ -16,8 +16,8 @@ export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_FAILURE = 'FETCH_FAILURE';
 
 
-// const URL = `https://background-check.herokuapp.com`;
-const URL = `http://localhost:3300`;
+const URL = `https://background-check.herokuapp.com`;
+// const URL = `http://localhost:3001`;
 // const BG = `https://api.accuratebackground.com/v3`;
 
 // const id = `:id`;
@@ -64,7 +64,7 @@ export const getData = () => dispatch => {
 export const getCandidate = () => dispatch => {
     dispatch({ type: FETCH_CAND_START });
     axios
-        .get(`${URL}/candidate`)
+        .get(`${URL}/candidates`)
         .then(res => {
             console.log(res);
             dispatch({ type: FETCH_CAND_SUCCESS, payload: res.data })   

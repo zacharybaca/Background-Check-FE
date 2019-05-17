@@ -10,6 +10,11 @@ import Login from './Login';
 import Register from './Register';
 
 
+import {Elements, StripeProvider} from 'react-stripe-elements';
+import CheckoutForm from './CheckoutForm';
+
+
+
 const Homepage = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,6 +27,14 @@ class App extends React.Component {
 
     return (
       <Router>
+           <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+        <div className="example">
+          <h1>React Stripe Elements Example</h1>
+          <Elements>
+            <CheckoutForm />
+          </Elements>
+        </div>
+      </StripeProvider>
         <div className="App">
           <Homepage>
             <Link to ='/login'>Login</Link>
@@ -42,6 +55,21 @@ class App extends React.Component {
     );
   }
 }
+// class App extends Component {
+//   render() {
+//     return (
+//       <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+//         <div className="example">
+//           <h1>React Stripe Elements Example</h1>
+//           <Elements>
+//             <CheckoutForm />
+//           </Elements>
+//         </div>
+//       </StripeProvider>
+//     );
+//   }
+// }
+
 
 
 export default App;

@@ -13,10 +13,39 @@ class Candidate extends React.Component {
     super(props);
     this.state = {
       candidate: {
-          'id': '',
-          'firstName': '',
-          'lastName': '',
-          'email': ''
+          "resource": "",
+          "id": "",
+          "created": "",
+          "updated": "",
+          "revision": "",
+          "masked": false,
+          "firstName": "",
+          "lastName": "",
+          "middleName": null,
+          "suffix": null,
+          "dateOfBirth": "",
+          "ssn": "",
+          "email": "",
+          "phone": "",
+          "address": "",
+          "city": "",
+          "region": "",
+          "country": "",
+          "postalCode": "",
+          "governmentId": {
+              "country": null,
+              "type": null,
+              "number": null
+          },
+          "aliases": [],
+          "educations": [],
+          "prevEmployed": null,
+          "employments": [],
+          "licenses": [],
+          "convicted": null,
+          "convictions": [],
+          "references": [],
+          "addressHistory": []
       }
     };
   }
@@ -32,10 +61,22 @@ class Candidate extends React.Component {
         {(this.props.candidates.map((candidate, index) => {
             return (
                 <div key={index}> 
+                    <div>Resource: {candidate.resource}</div>
                     <div>ID: {candidate.id}</div>
+                    <div>Created: {candidate.created}</div>
+                    <div>Updated: {candidate.updated}</div>
                     <div>First Name: {candidate.firstName}</div>
                     <div>Last Name: {candidate.lastName}</div>
                     <div>Email: {candidate.email}</div>
+                    <div>Address: {candidate.address}</div>
+                    <div>City: {candidate.city}</div>
+                    <div>Region: {candidate.region}</div>
+                    <div>Postal Code: {candidate.postalCode}</div>
+                    <div>Country: {candidate.country}</div>
+                    <div>DOB: {candidate.dateOfBirth}</div>
+                    <div>SSN: {candidate.ssn}</div>
+                    <div>Phone: {candidate.phone}</div>
+                    <br/>
                 </div>
             )
         }))

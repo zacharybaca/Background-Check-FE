@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -9,6 +10,7 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducer';
 import * as serviceWorker from './serviceWorker';
 
+require('dotenv').config();
 
 const store = createStore(
     rootReducer, applyMiddleware(thunk, logger)

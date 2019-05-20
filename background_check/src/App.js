@@ -28,7 +28,7 @@ class App extends React.Component {
 
     return (
       <Router>
-           <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+           <StripeProvider apiKey="pk_test_hJ4ymeWUIsyUjYOAiTXmMMUG00HWO2eMEX">
         <div className="example">
           <h1>React Stripe Elements Example</h1>
           <Elements>

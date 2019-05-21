@@ -9,7 +9,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducer';
 import * as serviceWorker from './serviceWorker';
-
 require('dotenv').config();
 
 const store = createStore(

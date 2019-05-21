@@ -27,6 +27,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "https://backgroundcheck.netlify.com",
   "browserslist": {
     "production": [
       ">0.2%",

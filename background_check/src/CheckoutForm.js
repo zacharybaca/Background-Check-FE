@@ -7,7 +7,7 @@ class CheckoutForm extends Component {
     this.submit = this.submit.bind(this);
   }
 
-  async submit(ev) {
+ async submit(ev) {
     // User clicked submit
     let {token} = await this.props.stripe.createToken({name: "Name"});
   let response = await fetch(`${process.env.REACT_APP_BE_URL}/charge`, {

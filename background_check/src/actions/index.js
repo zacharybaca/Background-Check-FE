@@ -15,7 +15,7 @@ export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_FAILURE = 'FETCH_FAILURE';
 
 
-// const URL = `https://background-check.herokuapp.com`;
+const URL = `https://background-check.herokuapp.com`;
  const URL = `${process.env.REACT_APP_BE_URL}`;
 // const BG = `https://api.accuratebackground.com/v3`;
 

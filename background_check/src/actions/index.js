@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 // REGISTER
 export const REGISTER = 'REGISTER';
 // LOGIN
@@ -16,8 +15,8 @@ export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_FAILURE = 'FETCH_FAILURE';
 
 
-const URL = `https://background-check.herokuapp.com`;
-// const URL = `${process.env.REACT_APP_BE_URL}`;
+// const URL = `https://background-check.herokuapp.com`;
+ const URL = `${process.env.REACT_APP_BE_URL}`;
 // const BG = `https://api.accuratebackground.com/v3`;
 
 // const id = `:id`;
@@ -78,7 +77,7 @@ export const getCandidate = () => dispatch => {
 export const postCandidate = (candidate) => dispatch => {
     dispatch({ type: FETCH_CAND_START });
     axios
-        .post(`${URL}/candidate`, candidate)
+        .post(`${URL}/candidates`, candidate)
         .then(res => {
             console.log(res);
             dispatch({ type: FETCH_CAND_SUCCESS, payload: res.data })   

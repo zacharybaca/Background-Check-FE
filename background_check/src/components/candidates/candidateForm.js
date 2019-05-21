@@ -80,7 +80,7 @@ class Candidate extends React.Component {
                 </div>
             )
         }))
-    }
+      }
       </CandidatePage>
     );
   }

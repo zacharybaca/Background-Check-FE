@@ -60,6 +60,20 @@ export const getData = () => dispatch => {
         }); 
 };
 
+export const getCanData = () => dispatch => {
+    dispatch({ type: FETCH_START });
+    axios
+        .get(`${URL}/candidates`)
+        .then(res => {
+            console.log(res);
+            dispatch({ type: FETCH_SUCCESS, payload: res.data })   
+        })
+        .catch(err => {
+            console.log(err.res);
+            dispatch({ type: FETCH_FAILURE, payload: err.res });
+        }); 
+};
+
 export const getCandidate = () => dispatch => {
     dispatch({ type: FETCH_CAND_START });
     axios
@@ -74,10 +88,14 @@ export const getCandidate = () => dispatch => {
         }); 
 };
 
-export const postCandidate = (candidate) => dispatch => {
+export const postCandidate = () => dispatch => {
     dispatch({ type: FETCH_CAND_START });
     axios
-        .post(`${URL}/candidates`, candidate)
+        .post(`${URL}/candidates`, {
+            headers: {Authorization: 'Basic NjNkNTI1NTUtYjAyZC00MTQzLTk1NTktZWE5ZDdhOGVjMzA4OmJjMzUyNTBhLTg2MWYtNDVlMC05MjIyLWJlYjcxZjRjZDA0ZQ==',
+            'Content-Type': 'application/json'
+        }
+        })
         .then(res => {
             console.log(res);
             dispatch({ type: FETCH_CAND_SUCCESS, payload: res.data })   

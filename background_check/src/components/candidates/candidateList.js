@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCandidate, postCandidate } from '../../actions';
+import { getCandidate, postCandidate, getCanData } from '../../actions';
 import Loader from 'react-loader-spinner';
 import styled from 'styled-components';
 
@@ -51,7 +51,7 @@ class CandidateList extends Component {
     }
 
     componentDidMount() {
-        this.props.getCandidate()
+        this.props.getCanData()
       };
 
     handleChanges = e => {
@@ -66,7 +66,7 @@ class CandidateList extends Component {
     addCandidate = e => {
         e.preventDefault();
         this.props.postCandidate(this.state.candidate)
-        this.props.history.push('/candidates');
+        // this.props.history.push('/candidates');
     };
     
     render() {
@@ -181,5 +181,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
     mapStateToProps,
-    { getCandidate, postCandidate }
+    { getCandidate, postCandidate, getCanData }
 ) (CandidateList);

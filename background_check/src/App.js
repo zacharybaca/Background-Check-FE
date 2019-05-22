@@ -9,10 +9,10 @@ import CandidateList from './components/candidates/candidateList';
 import Login from './Login';
 import Register from './Register';
 
-
-
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
+
+import HomePage from "./components/HomePage";
 
 
 
@@ -28,6 +28,8 @@ class App extends React.Component {
 
     return (
       <Router>
+                <Route exact path="/" component={HomePage} />
+
            <StripeProvider apiKey="pk_test_hJ4ymeWUIsyUjYOAiTXmMMUG00HWO2eMEX">
         <div className="example">
           <h1>React Stripe Elements Example</h1>
@@ -45,8 +47,8 @@ class App extends React.Component {
             <Link to ='/candidateList'>Submit Request</Link>
           </Homepage>
             
-            <Route exact path= '/login' component={Login} />
-            <Route path= '/register' component={Register} />
+            {/* <Route exact path= '/login' component={Login} /> */}
+            {/* <Route path= '/register' component={Register} /> */}
             <Route exact path='/users' component={UserForm} />
             <Route exact path='/candidates' component={Candidates} />
             <Route exact path='/candidateList' component={CandidateList} />

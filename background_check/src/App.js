@@ -42,6 +42,7 @@ class App extends React.Component {
             <Link to ='/candidates'>Candidates</Link>
             <Link to ='/candidateList'>Submit Request</Link>
           </Homepage>
+          
             
             <Route exact path= '/login' component={Login} />
             <Route path= '/register' component={Register} />

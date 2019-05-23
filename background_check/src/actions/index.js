@@ -63,7 +63,7 @@ export const getData = () => dispatch => {
 export const getCanData = () => dispatch => {
     dispatch({ type: FETCH_START });
     axios
-        .get(`${BG}/candidate`, {
+        .get(`${URL}/candidate`, {
             headers: {Authorization: 'Basic NjNkNTI1NTUtYjAyZC00MTQzLTk1NTktZWE5ZDdhOGVjMzA4OmJjMzUyNTBhLTg2MWYtNDVlMC05MjIyLWJlYjcxZjRjZDA0ZQ==',
             'Content-Type': 'application/json'
         }

@@ -12,7 +12,7 @@ import Register from './Register';
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
 
-
+// import CandidatesTest from './components/candidates/candidate';
 
 const Homepage = styled.div`
   display: flex;
@@ -41,6 +41,7 @@ class App extends React.Component {
             <Link to ='/users'>Users</Link>
             <Link to ='/candidates'>Candidates</Link>
             <Link to ='/candidateList'>Submit Request</Link>
+           
           </Homepage>
             
             <Route exact path= '/login' component={Login} />

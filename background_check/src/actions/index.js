@@ -63,7 +63,11 @@ export const getData = () => dispatch => {
 export const getCanData = () => dispatch => {
     dispatch({ type: FETCH_START });
     axios
-        .get(`${URL}/candidates`)
+        .get(`${BG}/candidate`, {
+            headers: {Authorization: 'Basic NjNkNTI1NTUtYjAyZC00MTQzLTk1NTktZWE5ZDdhOGVjMzA4OmJjMzUyNTBhLTg2MWYtNDVlMC05MjIyLWJlYjcxZjRjZDA0ZQ==',
+            'Content-Type': 'application/json'
+        }
+        })
         .then(res => {
             console.log(res);
             dispatch({ type: FETCH_SUCCESS, payload: res.data })   
@@ -77,7 +81,7 @@ export const getCanData = () => dispatch => {
 export const getCandidate = () => dispatch => {
     dispatch({ type: FETCH_CAND_START });
     axios
-        .get(`${URL}/candidates`)
+        .get(`${URL}/candidate`)
         .then(res => {
             console.log(res);
             dispatch({ type: FETCH_CAND_SUCCESS, payload: res.data })   
@@ -91,7 +95,7 @@ export const getCandidate = () => dispatch => {
 export const postCandidate = () => dispatch => {
     dispatch({ type: FETCH_CAND_START });
     axios
-        .post(`${URL}/candidates`, {
+        .post(`${URL}/candidate`, {
             headers: {Authorization: 'Basic NjNkNTI1NTUtYjAyZC00MTQzLTk1NTktZWE5ZDdhOGVjMzA4OmJjMzUyNTBhLTg2MWYtNDVlMC05MjIyLWJlYjcxZjRjZDA0ZQ==',
             'Content-Type': 'application/json'
         }

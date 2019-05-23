@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getCandidate, postCandidate, getCanData } from '../../actions';
 import Loader from 'react-loader-spinner';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Listpage = styled.div`
     line-height: 1;
@@ -54,6 +55,34 @@ class CandidateList extends Component {
         this.props.getCanData()
       };
 
+    //   componentDidMount() {
+    //     console.log('CDM now running');
+    //     axios
+    //       .get (`https://api.accuratebackground.com/v3/candidate`)
+    //       .then(response => {
+    //         console.log(response);
+    //         this.setState({ 
+    //           candidate: response.data
+    //         });
+    //       })
+    //       .catch(error => {
+    //         console.log(error);
+    //       });
+    //   }
+    
+     addCandidate = e => {
+        // add code to create the smurf using the api
+        axios
+          .post(`https://api.accuratebackground.com/v3/`)
+          .then(response => {
+            this.setState({
+              candidate: response.data
+            })
+          })
+            .catch (error =>
+        console.log(error))
+      }
+
     handleChanges = e => {
         this.setState({
             candidate: {
@@ -63,11 +92,11 @@ class CandidateList extends Component {
         });
     };
 
-    addCandidate = e => {
-        e.preventDefault();
-        this.props.postCandidate(this.state.candidate)
-        // this.props.history.push('/candidates');
-    };
+    // addCandidate = e => {
+    //     e.preventDefault();
+    //     this.props.postCandidate(this.state.candidate)
+    //     // this.props.history.push('/candidates');
+    // };
     
     render() {
         console.log('candidate list form');
